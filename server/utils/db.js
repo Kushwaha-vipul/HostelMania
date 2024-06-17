@@ -1,0 +1,13 @@
+const mongoose=require("mongoose");
+const URI=process.env.mongo_URI;
+ const connectDb=async()=>{
+    try{
+            await mongoose.connect(URI);
+            console.log("hey Mohan,connection successful to database.")
+    }
+    catch(error){
+                         console.error("hey Mohan,cdatabase connection is failed");
+                         process.exit(0);
+    }
+ }
+ module.exports=connectDb;

@@ -1,0 +1,58 @@
+
+
+.boxes{
+ position: sticky;
+  top: 0;
+    align-items: center;
+    background-color:rgb(122, 116, 116);
+    height: 8rem;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    
+    
+    
+}
+.container{
+ 
+    max-width:140rem;
+    padding : 3.2rem 2.5rem;
+  align-items: center;
+    display:flex;
+    justify-content: space-between;
+
+
+ 
+   
+}
+
+.mainLogo{
+  font-size: medium;
+  color: aliceblue;
+
+}
+
+ li{
+     list-style: none;
+}
+
+
+.nav-item a {
+    color: white;
+
+  }
+ 
+
+
+  .navbar-nav {
+    display: flex;
+    gap: 4.2rem;
+    align-items: center; 
+    z-index: 100;
+  
+}
+
+.navbar-nav a:hover,
+.navbar-nav a.active{
+  color: #18a4e5;
+}
