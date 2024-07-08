@@ -15,13 +15,14 @@ export const AdminLayout=()=>{
     }
     return <>
     <header>
-<div className="container">
+        
+<div className="admin-nav-container">
     <nav>
-        <ul>
-            <li><NavLink to="/admin/"><TbHome />Home</NavLink></li>
-            <li><NavLink to="/admin/contacts"><TiContacts/>contacts</NavLink></li>
-            <li><NavLink to="/admin/users"><PiUsersThreeFill />users</NavLink></li>
-            <li><NavLink to="/services"><MdOutlineElectricalServices/>services</NavLink></li>
+        <ul className="admin-navbar">
+            <li className="nav-item"><NavLink to="/admin/"><TbHome />Home</NavLink></li>
+            <li className="nav-item"><NavLink to="/admin/contacts"><TiContacts/>contacts</NavLink></li>
+            <li className="nav-item"><NavLink to="/admin/users"><PiUsersThreeFill />users</NavLink></li>
+            <li className="nav-item"><NavLink to="/services"><MdOutlineElectricalServices/>services</NavLink></li>
         </ul>
     </nav>
 </div>

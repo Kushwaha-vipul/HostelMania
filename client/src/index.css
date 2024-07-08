@@ -239,26 +239,58 @@ table{
   box-shadow:rgba(255,255,255,0.2) 0px 7px 29px 0px;
   border-collapse:collapse;
   border-radius:1rem;
+ 
   -webkit-border-radius:1rem;
   -moz-border-radius:1rem;
   -ms-border-radius:1rem;
   -o-border-radius:1rem;
 }
-body tr{
+.container-admin-users tr{
   display:grid;
+  
   grid-template-columns: repeat(5,minmax(10rem,1fr));
   align-items:center ;
-  box-shadow:0 0.3rem 0 grey;
+  box-shadow:0 0.3rem 0 rgb(87, 86, 86);
   margin-bottom: 10px;
   border-bottom: 4px solid transparent;
   color:var(--bg-color);
-
+  
   &:last-child{
     box-shadow:none;
   }
-
 }
-td{
+.container-admin-contacts tr{
+  display:grid;
+  grid-template-columns: 1.3fr 1.2fr 1.8fr  1fr;
+  
+  align-items:center ;
+  box-shadow:0 0.3rem 0 rgb(87, 86, 86);
+  margin-bottom: 9px;
+  border-bottom: 4px solid transparent;
+  color:var(--bg-color);
+  
+  &:last-child{
+    box-shadow:none;
+  }
+}
+ .container-admin-users th{
+  background-color: #6f2ab5;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  border-radius: 0.3rem;
+ }
+ .container-admin-contacts th{
+  background-color: #6f2ab5;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+
+  border-radius: 0.3rem;
+  
+  width: 100%;
+ }
+
+
+.container-admin-users td{
   font-size:1.7rem;
   letter-spacing:0.1rem;
   padding:3rem;
@@ -266,10 +298,36 @@ td{
   color:var(--dark-color);
   width:30rem;
 }
+.container-admin-contacts td{
+  font-size:1.7rem;
+  letter-spacing:0.1rem;
+  padding:3rem;
+  text-align:center;
+  color:var(--dark-color);
+  width:50rem;
+}
 .containerService{
   margin-top: 6%;
   align-items: center;
   display: flex;
+}
+.deleteButton{
+  font-family: sans-serif;
+  background: #03a9f4;
+  font-size: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 12px 10px;
+  letter-spacing: 2px;
+  outline: none;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  display: inline-block;
+  width: 35%;
 }
 
 /* *****************************home Page css start*********************************************************** */
@@ -775,13 +833,13 @@ border:none;
   /* Removed flex-direction: column; */
   border-right: 1px solid #ddd;
   padding-right: 3rem;
-  padding-left: 15rem;
+  padding-left: 18rem;
   
 }
 
 .week-day {
   font-size: 2.0em;
-  padding: 2.5rem;
+  padding: 2.0rem;
   text-align: center;
   font-weight: bold;
   position: relative;
@@ -800,7 +858,7 @@ border:none;
   flex-direction: column;
   width: fit-content; 
   border-bottom: 1px solid #ddd;
-  padding-bottom: 2rem;
+  padding-bottom: 1.2rem;
 }
 
 .meal-name {
@@ -810,12 +868,12 @@ border:none;
 
 .day-meals {
   flex: 1;
-  padding: 3.5rem;
+  padding: 4rem;
   width: fit-content;
 }
 
 .meal-item {
-  margin-bottom: 2.05rem;
+  margin-bottom: 3.05rem;
   margin-left: 1em;
 }
 
@@ -873,3 +931,51 @@ border:none;
  
 
 }
+
+.admin-contacts-section .mainHeading{
+  text-align: center;
+  padding-bottom: 3em;
+  padding-top: 3em;
+}
+.admin-users-section .mainHeading{
+  text-align: center;
+  padding-bottom: 3em;
+  padding-top: 3em;
+}
+
+.container admin-contacts thead tr td{
+    font-size: 3.2rem;
+    padding-left: 30%;
+}
+
+.admin-nav-container{
+ align-items: center;
+  padding : 2.2rem;
+  background-color: black;
+   width: 100%;
+}
+
+ .admin-navbar .nav-item a {
+  color: white;
+}
+
+
+.admin-navbar{
+  padding-left: 22%;
+  display: flex;
+  gap: 15.2rem;
+  align-items: center; 
+  z-index: 100;
+}
+.nav-item a {
+  color: white;
+
+}
+
+.admin-navbar a:hover,
+.admin-navbar a.active{
+  color: #18a4e5;
+}
+
+
+

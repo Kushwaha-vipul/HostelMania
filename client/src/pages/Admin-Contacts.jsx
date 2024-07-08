@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../store/auth";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
 export const AdminContacts = () => {
   const { authorizationToken } = useAuth();
   const [contactData, setContactData] = useState([]);
@@ -21,27 +21,29 @@ export const AdminContacts = () => {
       console.log(err);
     }
   };
-//definte delectContactById function
+  //definte delectContactById function
 
-const deleteContactById=async(id)=>{
-  try{
-      const response=await fetch(`http://localhost:3000/api/admin/contacts/delete/${id}`,{
-        method:'DELETE',
-        headers:{
-          Authorization:authorizationToken,
-        },
-      })
-      if(response.ok){
+  const deleteContactById = async (id) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/admin/contacts/delete/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: authorizationToken,
+          },
+        }
+      );
+      if (response.ok) {
         getContactsData();
         toast.success("Deleted Succesfully");
-      }
-      else{
+      } else {
         toast.error("Not Deleted");
       }
-  }catch(err){
-   console.log(err); 
-  }
-}
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
     getContactsData();
   }, []);
@@ -49,19 +51,37 @@ const deleteContactById=async(id)=>{
   return (
     <>
       <section className="admin-contacts-section">
-        <h1>Admin Contact Data</h1>
-        <div className="container admin-users">
-          {contactData.map((curContactData, index) => {
-            const { username, email, message,_id } = curContactData;
-            return (
-              <div key={index}>
-                <p>{username}</p>
-                <p>{email}</p>
-                <p>{message}</p>
-                <button className="btn" onClick={()=>deleteContactById(_id)}>Delete</button>
-              </div>
-            );
-          })}
+       <div className="mainHeading"> <h1>Admin Contact Data</h1></div>
+        <div className="container-admin-contacts">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email Id</th>
+                <th>Message</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contactData.map((curContactData, index) => {
+                const { username, email, message, _id } = curContactData;
+                return (
+                  <div key={index}>
+                    <td>{username}</td>
+                    <td>{email}</td>
+                    <td>{message}</td>
+                  <td>  <button
+                     className="deleteButton"
+                      onClick={() => deleteContactById(_id)}
+                    >
+                      Delete
+                    </button>
+                    </td>
+                  </div>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </section>
     </>
